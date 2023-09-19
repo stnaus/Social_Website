@@ -128,3 +128,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = 'dashboard' # tells Django the URL to which the user should be redirected after a successful login, if there is no next parameter
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
+
+# E-mail configuration
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
