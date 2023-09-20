@@ -132,3 +132,8 @@ LOGOUT_URL = 'logout'
 # E-mail configuration
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Managing the uploading of files to the site and distribution of media files
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
