@@ -145,4 +145,28 @@ MEDIA_ROOT = BASE_DIR / 'media'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
     'account.authentication.EmailAuthBackend',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'social_core.backends.twitter.TwitterOAuth',
+    'social_core.backends.google.GoogleOAuth2',
+]
+
+
+SOCIAL_AUTH_TWITTER_KEY = 'p0PZfO8aPZ67fkqBycC8WzqRz' # API Key
+SOCIAL_AUTH_TWITTER_SECRET = 'tktFdteXPGrpkp7djAAz90Nhsn1sb6PO6jW2Q1AzlfK3YXDd4X' # API Key Secret
+
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '643976947666-eapn8kfp0iugirimr5ih97lp8q1dvtb7.apps.googleusercontent.com' # ИД клиента Google
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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' # Секрет клиента Google
+
+
+SOCIAL_AUTH_PIPELINE = [
+    'social_core.pipeline.social_auth.social_details',
+    'social_core.pipeline.social_auth.social_uid',
+    'social_core.pipeline.social_auth.auth_allowed',
+    'social_core.pipeline.social_auth.social_user',
+    'social_core.pipeline.user.get_username',
+    'social_core.pipeline.user.create_user',
+    'account.authentication.create_profile',
+    'social_core.pipeline.social_auth.associate_user',
+    'social_core.pipeline.social_auth.load_extra_data',
+    'social_core.pipeline.user.user_details',
 ]
